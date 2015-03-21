@@ -1,9 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+##Description of "makeCacheMatrix" function
 
-## Write a short comment describing this function
-##This function takes a matrix. And defines functions to sets the inverse of a matrix as a function
-##that is accessible in the parent environment, or sets a function to the global environment.
+
+##This function takes a matrix and defines and sets or gets the invers of the matrix, depending
+##on if there is an inverse defined in the parent environemtn.If not, the function
+##sets a function to the global environment.
 makeCacheMatrix <- function(x = matrix()){
   m <- NULL
   set <- function(y) {
@@ -20,12 +20,15 @@ makeCacheMatrix <- function(x = matrix()){
 }
 
 
-## Write a short comment describing this function
-##This function takes a matrix and determines if has an inverse assigned
-##if does not then it calculates the inverse of the matrix
+##Description of "cacheSolve" function:
+
+##This function takes a matrix and determines if an inverse has been calculated
+##and assigned to the parent environment.If an inverse has not been cached to the parent environment
+##then cacheSolve, the function calculates the function and 
+##saves it as a variable in the parent environment.
 
 cacheSolve <- function(x, ...){
-  ## Return a matrix that is the inverse of 'x'
+
   m <- x$getinv()
   if(!is.null(m)) {
     message("getting cached data")
